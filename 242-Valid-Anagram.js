@@ -7,23 +7,23 @@ export function isAnagram(s, t, map = new Map()) {
 }
 
 const addFrequency = (word, map) => {
-  for (let char of word) {
-    const count = (map.get(char) || 0) + 1;
-    map.set(char, count);
+  for (let letter of word) {
+    const frequency = (map.get(letter) || 0) + 1;
+    map.set(letter, frequency);
   }
 };
 
 const subtractFrequency = (word, map) => {
-  for (let char of word) {
-    if (!map.has(char)) continue;
-    const count = map.get(char) - 1;
-    map.set(char, count);
+  for (let letter of word) {
+    if (!map.has(letter)) continue;
+    const frequency = map.get(letter) - 1;
+    map.set(letter, frequency);
   }
 };
 
 const checkFrequency = (map) => {
-  for (const [, count] of map) {
-    const isNotEmpty = count !== 0;
+  for (const [, frequency] of map) {
+    const isNotEmpty = frequency !== 0;
     if (isNotEmpty) return false;
   }
   return true;
