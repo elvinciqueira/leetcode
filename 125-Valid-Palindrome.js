@@ -40,7 +40,7 @@ function isPalindrome(word) {
     } else if (!isAlphaNumeric(rightChar)) {
       right--;
     } else {
-      if (isEqualLetter(leftLetter, rightLetter)) {
+      if (isEqualChar(leftChar, rightChar)) {
         return false;
       }
       left++;
