@@ -14,6 +14,7 @@ function isValid(s) {
     if (isEqual) {
       stack.pop();
     }
+    return false;
   }
   return stack.length === 0;
 }
